@@ -4,17 +4,12 @@ import { baseUrl } from '../../shared/baseUrl';
 
 const RenderCampsite = (props) => {
     const { campsite } = props;
-  
-
     if (campsite) {
         return (
             <Card containerStyle={styles.cardContainer}>
                 <Card.Image source={{ uri: baseUrl + campsite.image }}>
                     <View style={{ justifyContent: 'center', flex: 1 }}>
-                        <Text style={styles.cardText}
-                        >
-                            {campsite.name}
-                        </Text>
+                        <Text style={styles.cardText}>{campsite.name}</Text>
                     </View>
                 </Card.Image>
                 <Text style={{ margin: 20 }}>{campsite.description}</Text>
@@ -37,9 +32,7 @@ const RenderCampsite = (props) => {
                         color='#5637DD'
                         raised
                         reverse
-                        onPress={() =>
-                            props.onShowModal
-                        }
+                        onPress={props.onShowModal}
                     />
                 </View>
             </Card>
@@ -68,7 +61,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white',
         fontSize: 20
-    },
+    }
 });
 
 export default RenderCampsite;
